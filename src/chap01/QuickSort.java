@@ -6,7 +6,8 @@ public class QuickSort {
 
 		int[] a = { 5, 6, 3, 10, 9, 8, 1, 2, 4, 7 };
 
-		quickSort(a,0,9);
+
+		quickSort(a,0,a.length-1);
 		
 		for(int g=0; 10>g ; g++) {
 			System.out.print(a[g]+" ");
@@ -14,19 +15,16 @@ public class QuickSort {
 	}
 
 	public static void quickSort(int[] a, int start, int end) {
-
 		if(start >= end) {
 			return;
 		}
-		
 		int key = start;
 		int i = start+1;
 		int j = end;
 		int temp;
 		
-		while(j >= i) {
-			System.out.print(key+" "+i+"/");
-			while(a[key] >= a[i]) {
+		while(j >= i ) {
+			while(i < a.length && a[key] >= a[i]) {
 				i++;
 			}
 			while(a[key] <= a[j] && j>start) {
@@ -42,10 +40,7 @@ public class QuickSort {
 				a[j] = temp;
 			}
 		}
-		
 		quickSort(a,j+1,end);
 		quickSort(a,start, j-1);
-		
-
 	}
 }
