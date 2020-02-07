@@ -3,10 +3,14 @@ package chap01;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Example1931 {
-
+	
+	boolean[] c = new boolean[7];
+	
 	public void main(String[] args) throws IOException {
 	
 	input();
@@ -28,6 +32,20 @@ public class Example1931 {
 	}
 
 	public void output() {
+		
+	}
+	
+	public void bfs(int start) {
+		Queue q = new LinkedList();
+		q.offer(start);
+		c[start] = true;
+		while(!q.isEmpty()) {
+			int x = (int) q.peek();
+			System.out.println(x);
+			for(int i = 0 ; i < )
+			
+			
+		}
 		
 	}
 }

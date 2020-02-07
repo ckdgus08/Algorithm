@@ -1,26 +1,23 @@
 package chap01;
 
+import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Vector;
+import java.util.Stack;
 
 public class Queue1 {
 
-
-	Queue<Integer> queue;
-	Vector<Integer> a = null;
-	int number = 7;
-	int[] c = new int[7];
-
 	public static void main(String[] agrs) {
-
-	}
+		Queue q = new LinkedList();
+		Stack s = new Stack();
+	
 		
-		public void bfs (int start) {
-			Queue<Integer> q;
-			q.add(start);
-			c[start] = true;
-		}
+		s.push("1");
+		s.push("2");
+		s.push("3");
 		
+		q.offer("0");
+		q.offer("1");
+		q.offer("3");
 		
 	}
 
