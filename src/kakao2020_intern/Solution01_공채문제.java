@@ -1,6 +1,8 @@
+package kakao2020_intern;
+
 import java.util.Locale;
 
-public class Solution01 {
+public class Solution01_공채문제 {
 
     public String solution(String new_id) {
         return recommendValidId(new_id);
