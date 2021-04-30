@@ -1,90 +1,90 @@
-package E2020_02_22;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-
-public class P15683_1 {
-
-	/*
-	 * Ã¹Â° ÁÙ¿¡ ¼öÀÇ °³¼ö N(2 ¡Â N ¡Â 11)°¡ ÁÖ¾îÁø´Ù.
-	 *  µÑÂ° ÁÙ¿¡´Â A1, A2, ..., ANÀÌ ÁÖ¾îÁø´Ù. 
-	 *  (1 ¡Â Ai ¡Â 100) ¼ÂÂ° ÁÙ¿¡´Â ÇÕÀÌ N-1ÀÎ 4°³ÀÇ Á¤¼ö°¡ ÁÖ¾îÁö´Âµ¥, 
-	 *  Â÷·Ê´ë·Î µ¡¼À(+)ÀÇ °³¼ö, »¬¼À(-)ÀÇ °³¼ö, °ö¼À(¡¿)ÀÇ °³¼ö, ³ª´°¼À(¡À)ÀÇ °³¼öÀÌ´Ù. 
-	 *  Ãâ·Â
-	 *  Ã¹Â° ÁÙ¿¡ ¸¸µé ¼ö ÀÖ´Â ½ÄÀÇ °á°úÀÇ ÃÖ´ñ°ªÀ», µÑÂ° ÁÙ¿¡´Â ÃÖ¼Ú°ªÀ» Ãâ·ÂÇÑ´Ù. 
-	 *  ÃÖ´ñ°ª°ú ÃÖ¼Ú°ªÀÌ Ç×»ó -10¾ïº¸´Ù Å©°Å³ª °°°í, 10¾ïº¸´Ù ÀÛ°Å³ª °°Àº °á°ú°¡ ³ª¿À´Â ÀÔ·Â¸¸ ÁÖ¾îÁø´Ù. 
-	 *  ¶ÇÇÑ, ¾Õ¿¡¼­ºÎÅÍ °è»êÇßÀ» ¶§, Áß°£¿¡ °è»êµÇ´Â ½ÄÀÇ °á°úµµ Ç×»ó -10¾ïº¸´Ù Å©°Å³ª °°°í, 10¾ïº¸´Ù ÀÛ°Å³ª °°´Ù.
-	 */
-
-	static int N, min, max, d, q, g, n;
-	static int[] arr;
-
-	public static void main(String[] args) throws IOException {
-
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-		String str = br.readLine();
-
-		StringTokenizer st = new StringTokenizer(str, " ");
-
-		N = Integer.parseInt(st.nextToken());
-		arr = new int[N];
-		
-		str = br.readLine();
-		for (int i = 0; N > i; ++i) {
-			st = new StringTokenizer(str, " ");
-				arr[i] = Integer.parseInt(st.nextToken());
-			}
-		
-		str = br.readLine();
-		for(int i = 0; 4 > i ; ++i) {
-			st = new StringTokenizer(str, " ");
-			d =  Integer.parseInt(st.nextToken());
-			q =  Integer.parseInt(st.nextToken());
-			g =  Integer.parseInt(st.nextToken());
-			n =  Integer.parseInt(st.nextToken());
-		} // ÀÔ·Â
-
-	}
-	
-	public static void calculate() {
-		
-		
-		arr[]
-	}
-	
-	public static void makePermutation(int N, int current, int[] temp, boolean[] visited) {
-	
-		if(current == N) {
-			for(int i = 0 ; N > i ; ++i) {
-				
-			}
-			return;
-		} 
-		for (int i = 0; N > i; i++) {
-			if (!visited[i]) {
-				visited[i] = true;
-				temp[current] = (int) list.get(i);
-				makePermutation(N, current + 1, temp, visited);
-				visited[i] = false;
-			}
-		}
-			
-		}
-		
-		
-	}
-	
-	// 2
-	// 5 6					30
-	// 0 0 1 0				30
-	
-	
-	
-	
-	
-	
-	
-}
+//package E2020_02_22;
+//
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//import java.util.StringTokenizer;
+//
+//public class P15683_1 {
+//
+//	/*
+//	 * Ã¹Â° ï¿½Ù¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ N(2 ï¿½ï¿½ N ï¿½ï¿½ 11)ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½.
+//	 *  ï¿½ï¿½Â° ï¿½Ù¿ï¿½ï¿½ï¿½ A1, A2, ..., ANï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½.
+//	 *  (1 ï¿½ï¿½ Ai ï¿½ï¿½ 100) ï¿½ï¿½Â° ï¿½Ù¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ N-1ï¿½ï¿½ 4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½Âµï¿½,
+//	 *  ï¿½ï¿½ï¿½Ê´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(+)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½(-)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½.
+//	 *  ï¿½ï¿½ï¿½
+//	 *  Ã¹Â° ï¿½Ù¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½, ï¿½ï¿½Â° ï¿½Ù¿ï¿½ï¿½ï¿½ ï¿½Ö¼Ú°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+//	 *  ï¿½Ö´ñ°ª°ï¿½ ï¿½Ö¼Ú°ï¿½ï¿½ï¿½ ï¿½×»ï¿½ -10ï¿½ïº¸ï¿½ï¿½ Å©ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½, 10ï¿½ïº¸ï¿½ï¿½ ï¿½Û°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â¸ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½.
+//	 *  ï¿½ï¿½ï¿½ï¿½, ï¿½Õ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×»ï¿½ -10ï¿½ïº¸ï¿½ï¿½ Å©ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½, 10ï¿½ïº¸ï¿½ï¿½ ï¿½Û°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½.
+//	 */
+//
+//	static int N, min, max, d, q, g, n;
+//	static int[] arr;
+//
+//	public static void main(String[] args) throws IOException {
+//
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//		String str = br.readLine();
+//
+//		StringTokenizer st = new StringTokenizer(str, " ");
+//
+//		N = Integer.parseInt(st.nextToken());
+//		arr = new int[N];
+//
+//		str = br.readLine();
+//		for (int i = 0; N > i; ++i) {
+//			st = new StringTokenizer(str, " ");
+//				arr[i] = Integer.parseInt(st.nextToken());
+//			}
+//
+//		str = br.readLine();
+//		for(int i = 0; 4 > i ; ++i) {
+//			st = new StringTokenizer(str, " ");
+//			d =  Integer.parseInt(st.nextToken());
+//			q =  Integer.parseInt(st.nextToken());
+//			g =  Integer.parseInt(st.nextToken());
+//			n =  Integer.parseInt(st.nextToken());
+//		} // ï¿½Ô·ï¿½
+//
+//	}
+//
+//	public static void calculate() {
+//
+//
+//		arr[]
+//	}
+//
+//	public static void makePermutation(int N, int current, int[] temp, boolean[] visited) {
+//
+//		if(current == N) {
+//			for(int i = 0 ; N > i ; ++i) {
+//
+//			}
+//			return;
+//		}
+//		for (int i = 0; N > i; i++) {
+//			if (!visited[i]) {
+//				visited[i] = true;
+//				temp[current] = (int) list.get(i);
+//				makePermutation(N, current + 1, temp, visited);
+//				visited[i] = false;
+//			}
+//		}
+//
+//		}
+//
+//
+//	}
+//
+//	// 2
+//	// 5 6					30
+//	// 0 0 1 0				30
+//
+//
+//
+//
+//
+//
+//
+//}
