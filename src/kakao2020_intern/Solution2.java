@@ -20,8 +20,8 @@ class Solution2 {
         long l2 = Math.abs(order_operator('*', '-', '+'));
         long l3 = Math.abs(order_operator('+', '*', '-'));
         long l4 = Math.abs(order_operator('+', '-', '*'));
-        long l5 = Math.abs(order_operator('*', '+', '-'));
-        long l6 = Math.abs(order_operator('*', '+', '-'));
+        long l5 = Math.abs(order_operator('-', '+', '*'));
+        long l6 = Math.abs(order_operator('-', '*', '+'));
 
         return Math.max(Math.max(Math.max(l3, l4), Math.max(l1, l2)), Math.max(l5, l6));
     }
@@ -30,7 +30,7 @@ class Solution2 {
         List<Character> temp_operator = operator.stream().collect(Collectors.toList());
         List<Long> temp_number = number.stream().collect(Collectors.toList());
 
-        while (temp_number.size() != 1) {
+        while (temp_operator.contains(first)) {
             for (int i = 0; i < temp_operator.size(); i++) {
                 if (temp_operator.get(i) == first) {
                     long temp;
@@ -46,14 +46,17 @@ class Solution2 {
                     temp_number.remove(i);
 
                     temp_number.add(i, temp);
+                    break;
                 }
             }
+        }
+        while (temp_operator.contains(second)) {
             for (int i = 0; i < temp_operator.size(); i++) {
                 if (temp_operator.get(i) == second) {
                     long temp;
-                    if (first == '*')
+                    if (second == '*')
                         temp = temp_number.get(i) * temp_number.get(i + 1);
-                    else if (first == '+')
+                    else if (second == '+')
                         temp = temp_number.get(i) + temp_number.get(i + 1);
                     else
                         temp = temp_number.get(i) - temp_number.get(i + 1);
@@ -63,14 +66,17 @@ class Solution2 {
                     temp_number.remove(i);
 
                     temp_number.add(i, temp);
+                    break;
                 }
             }
+        }
+        while (temp_operator.contains(third)) {
             for (int i = 0; i < temp_operator.size(); i++) {
                 if (temp_operator.get(i) == third) {
                     long temp;
-                    if (first == '*')
+                    if (third == '*')
                         temp = temp_number.get(i) * temp_number.get(i + 1);
-                    else if (first == '+')
+                    else if (third == '+')
                         temp = temp_number.get(i) + temp_number.get(i + 1);
                     else
                         temp = temp_number.get(i) - temp_number.get(i + 1);
@@ -80,9 +86,9 @@ class Solution2 {
                     temp_number.remove(i);
 
                     temp_number.add(i, temp);
+                    break;
                 }
             }
-
         }
 
         return temp_number.get(0);
