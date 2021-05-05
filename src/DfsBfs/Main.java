@@ -3,12 +3,12 @@ package DfsBfs;
 public class Main {
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution2 solution = new Solution2();
 
-        int[] numbers = {1, 1, 1, 1, 1};
-        int target = 3;
+        int n = 3;
+        int[][] computers = {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}};
 
-        int solution1 = solution.solution(numbers, target);
+        int solution1 = solution.solution(n, computers);
 
         System.out.println("solution1 = " + solution1);
     }
