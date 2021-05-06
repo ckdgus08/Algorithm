@@ -1,32 +1,36 @@
 package kakao2019_intern;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 public class Solution4 {
 
     // TODO: 2021/05/06 17:00
 
+    Map<Long, Long> map = new HashMap<>();
 
     public long[] solution(long k, long[] room_number) {
 
-        Set<Long> set = new HashSet<>();
-        List<Long> list = new ArrayList<>();
+        List<Long> answer = new ArrayList<>();
 
-        for (long l : room_number) {
-            if (set.add(l)) {
-                list.add(l);
-            } else {
-                for (long i = l + 1L; i <= k; i++) {
-                    if (set.add(i)) {
-                        list.add(i);
-                        break;
-                    }
-                }
-            }
+        for (long room : room_number) {
+            answer.add(findNextRoom(room));
         }
-        return list.stream().mapToLong(l -> l).toArray();
+
+        return answer.stream().mapToLong(l -> l).toArray();
+    }
+
+    long findNextRoom(long room) {
+        if (!map.containsKey(room)) {
+            map.put(room, room + 1);
+            return room;
+        }
+
+        long next = map.get(room);
+        long nextRoom = findNextRoom(next);
+        map.put(room, nextRoom);
+        return nextRoom;
     }
 }
