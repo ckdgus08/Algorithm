@@ -4,10 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Solution solution = new Solution();
+        Solution2 solution = new Solution2();
 
-        int[] solution1 = solution.solution(5, new int[]{2, 1, 2, 6, 2, 4, 3, 3});
 
-        System.out.println("solution1 = " + solution1);
+        System.out.println("solution1 = " + solution.solution("1D2S#10S"));
+
     }
 }
