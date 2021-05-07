@@ -4,10 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Solution2 solution = new Solution2();
+        Solution3 solution = new Solution3();
 
 
-        System.out.println("solution1 = " + solution.solution("1D2S#10S"));
+        System.out.println("solution1 = " + solution.solution(new String[]{"Enter uid1234 Muzi", "Enter uid4567 Prodo", "Leave uid1234", "Enter uid1234 Prodo", "Change uid4567 Ryan"}));
 
     }
 }
