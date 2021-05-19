@@ -6,33 +6,38 @@ import java.io.InputStreamReader;
 
 public class P1557 {
 
-    static long min;
-    static long max;
-    static boolean[] arr;
+    static long K, low, high;
+    static int[] mobius;
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] split = br.readLine().split(" ");
-        min = Long.parseLong(split[0]);
-        max = Long.parseLong(split[1]);
-        arr = new boolean[(int) (max - min + 1)];
+        K = Integer.parseInt(br.readLine());
 
-        for (long i = 2; i * i <= max; i++) {
-            long pow = i * i;
-            long start = min + (pow - (min % pow)) % pow;
+        low = 0;
+        high = 2000000000;
+        mobius = new int[200001];
 
-            for (long j = start; j <= max; j += pow) {
-                arr[(int) (j - min)] = true;
-            }
+        mobius[1] = 1;
+        for (int i = 1; i <= 200000; i++)
+            if (mobius[i] != 0)
+                for (int j = 2 * i; j <= 200000; j += i)
+                    mobius[j] -= mobius[i];
+
+        while (low + 1 < high) {
+            long mid = (low + high) / 2;
+            if (squareNoNo(mid) < K)
+                low = mid;
+            else high = mid;
         }
 
-        int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (!arr[i])
-                count++;
-        }
+        System.out.print(high);
+    }
 
-        System.out.print(count);
+    static long squareNoNo(long n) {
+        long k = 0;
+        for (int i = 1; i * i <= n; ++i)
+            k += (mobius[i] * (n / (i * i)));
+        return k;
     }
 }
