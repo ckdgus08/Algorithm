@@ -1,4 +1,4 @@
-package BOJ;
+package boj;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,11 +23,9 @@ public class P2580 {
         }
 
         go(0, 0);
-
-
     }
 
-    static void go(int row, int col) {
+    public static void go(int row, int col) {
 
         if (col == 9) {
             go(row + 1, 0);
@@ -47,15 +45,16 @@ public class P2580 {
         }
 
         if (board[row][col] == 0) {
-            for (int i = 1; i <= 9; i++)
+            for (int i = 1; i <= 9; i++) {
                 if (check(row, col, i)) {
                     board[row][col] = i;
                     go(row, col + 1);
                 }
-
+            }
             board[row][col] = 0;
             return;
         }
+
         go(row, col + 1);
     }
 
